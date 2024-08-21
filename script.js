@@ -13,8 +13,8 @@ function addBookToLibrary(Book, myLibrary) {
   myLibrary.push(bookObj);
 }
 
-addBookToLibrary(Book, myLibrary);
-addBookToLibrary(Book, myLibrary);
+// addBookToLibrary(Book, myLibrary);
+// addBookToLibrary(Book, myLibrary);
 
 console.log(myLibrary);
 
@@ -22,9 +22,22 @@ function displayBook(myLibrary) {
   for(let i = 0; i < myLibrary.length; i++){
     const bookCard = document.createElement("div");
     document.body.appendChild(bookCard);
-    bookCard.textContent += Object.values(myLibrary[i]).join(" ");
+    bookCard.textContent += myLibrary[i].title + " | " + myLibrary[i].author + " | " + myLibrary[i].pages + " | " + myLibrary[i].status + " | ";
   }
     
 }
 
-displayBook(myLibrary);
+// displayBook(myLibrary);
+
+const addNewBtn = document.querySelector("#showDialog");
+const dialog = document.querySelector("#dialog");
+const closeBtn = document.querySelector("#close");
+
+addNewBtn.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  dialog.close();
+});
