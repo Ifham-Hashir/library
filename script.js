@@ -30,14 +30,20 @@ function displayBook(myLibrary) {
 // displayBook(myLibrary);
 
 const addNewBtn = document.querySelector("#showDialog");
-const dialog = document.querySelector("#dialog");
+const dialog = document.querySelector(".dialog");
 const closeBtn = document.querySelector("#close");
+const confirmBtn = document.querySelector("#confirmBtn");
 
 addNewBtn.addEventListener("click", () => {
   dialog.showModal();
 });
 
 closeBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  dialog.close();
+});
+
+confirmBtn.addEventListener("submit", (e) => {
   e.preventDefault();
   dialog.close();
 });
