@@ -6,21 +6,23 @@ const container = document.querySelector(".container");
 
 const myLibrary = [];
 
-function Book(title, author) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
+  this.pages = pages;
+  this.read = read;
 }
 
 function addBookToLibrary(bookObj, myLibrary) {
   myLibrary.push(bookObj);
 }
 
-function displayBook(title, author) {
+function displayBook(title, author, pages, read) {
 
   const bookCard = document.createElement("div");
   container.appendChild(bookCard);
   bookCard.classList.add("book-card");
-  bookCard.textContent = `Title: ${title} \n\n Author: ${author}`;
+  bookCard.textContent = `Title: ${title} \n\n Author: ${author} \n\n Pages: ${pages} \n\n Status: ${read}`;
 }
 
 addBtn.addEventListener("click", () => {
@@ -32,9 +34,13 @@ dialog.addEventListener("close", () => {
 
   const author = document.getElementById("author").value === "" ? "No Author" : document.getElementById("author").value
 
-  const bookObj = new Book(title, author);
+  const pages = document.getElementById("pages").value === "" ? "0" : document.getElementById("pages").value
+
+  const read = document.querySelector('input[name="read"]').checked === true ? "Read" : "Not Read";
+
+  const bookObj = new Book(title, author, pages, read);
   addBookToLibrary(bookObj, myLibrary);
-  displayBook(title, author);
+  displayBook(title, author, pages, read);
 });
 
 confirmBtn.addEventListener("click", (event) => {
