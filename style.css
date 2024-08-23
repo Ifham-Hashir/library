@@ -1,6 +1,18 @@
+*{
+  box-sizing: border-box;
+}
 .header {
   padding: 30px;
   background-color: black;
+}
+
+.container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
 }
 
 .book-card {
@@ -10,4 +22,7 @@
   color: #000;
   margin: 10px;
   white-space: pre-wrap;
+  text-align: center;
+  font-weight: bolder;
+  padding: 10px;
 }

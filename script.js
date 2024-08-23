@@ -1,6 +1,7 @@
 const addBtn = document.querySelector("#add-button");
 const dialog = document.querySelector("dialog");
 const confirmBtn = dialog.querySelector("#confirm-button");
+const container = document.querySelector(".container");
 
 
 const myLibrary = [];
@@ -15,10 +16,11 @@ function addBookToLibrary(bookObj, myLibrary) {
 }
 
 function displayBook(title, author) {
-  const bookCard = document.createElement("p");
-  document.body.appendChild(bookCard);
+
+  const bookCard = document.createElement("div");
+  container.appendChild(bookCard);
   bookCard.classList.add("book-card");
-  bookCard.textContent = `Title: ${title} \n Author: ${author}`;
+  bookCard.textContent = `Title: ${title} \n\n Author: ${author}`;
 }
 
 addBtn.addEventListener("click", () => {
@@ -27,7 +29,9 @@ addBtn.addEventListener("click", () => {
 
 dialog.addEventListener("close", () => {
   const title = document.getElementById("title").value === "" ? "No Title" : document.getElementById("title").value
+
   const author = document.getElementById("author").value === "" ? "No Author" : document.getElementById("author").value
+
   const bookObj = new Book(title, author);
   addBookToLibrary(bookObj, myLibrary);
   displayBook(title, author);
