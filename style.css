@@ -1,0 +1,13 @@
+.header {
+  padding: 30px;
+  background-color: black;
+}
+
+.book-card {
+  background-color: aqua;
+  height: 200px;
+  width: 200px;
+  color: #000;
+  margin: 10px;
+  white-space: pre-wrap;
+}
