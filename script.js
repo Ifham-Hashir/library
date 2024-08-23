@@ -41,6 +41,7 @@ dialog.addEventListener("close", () => {
   const bookObj = new Book(title, author, pages, read);
   addBookToLibrary(bookObj, myLibrary);
   displayBook(title, author, pages, read);
+  document.querySelector("form").reset();
 });
 
 confirmBtn.addEventListener("click", (event) => {
