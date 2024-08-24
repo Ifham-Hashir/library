@@ -17,12 +17,14 @@
 
 .book-card {
   background-color: aqua;
-  height: 200px;
-  width: 200px;
+  height: 240px;
+  width: minmax(200px,300px);
   color: #000;
   margin: 10px;
   white-space: pre-wrap;
-  text-align: center;
   font-weight: bolder;
   padding: 10px;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
