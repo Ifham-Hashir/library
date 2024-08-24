@@ -19,7 +19,10 @@ function addBookToLibrary(bookObj, myLibrary) {
 
 function displayBook(title, author, pages, read) {
 
+  const index = myLibrary.length-1;
+
   const bookCard = document.createElement("div");
+  bookCard.setAttribute("data-index", `${index}`);
   container.appendChild(bookCard);
   bookCard.classList.add("book-card");
   bookCard.textContent = `Title: ${title} \n\n Author: ${author} \n\n Pages: ${pages} \n\n Status: ${read} \n\n`;
