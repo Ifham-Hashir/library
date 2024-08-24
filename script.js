@@ -28,10 +28,12 @@ function displayBook(title, author, pages, read) {
   bookCard.textContent = `Title: ${title} \n\n Author: ${author} \n\n Pages: ${pages} \n\n Status: ${read} \n\n`;
 
   const removeBtn = document.createElement("button");
+  removeBtn.classList.add("remove-btn");
   bookCard.appendChild(removeBtn);
   removeBtn.textContent = "Remove";
 
   const changeStatusBtn = document.createElement("button");
+  changeStatusBtn.classList.add("change-status-btn");
   bookCard.appendChild(changeStatusBtn);
   changeStatusBtn.textContent = "Change Status";
 }
@@ -60,3 +62,29 @@ confirmBtn.addEventListener("click", (event) => {
   dialog.close();
 });
 
+container.addEventListener('click', function(event) {
+  if (event.target.classList.contains('remove-btn')) {
+      const book = event.target.closest('[data-index]');
+      book.remove();
+      const bookIndex = book.dataset.index;
+      delete myLibrary[bookIndex];
+  }
+});
+
+container.addEventListener('click', function(event) {
+  if (event.target.classList.contains('change-status-btn')) {
+      const book = event.target.closest('[data-index]');
+      const bookIndex = book.dataset.index;
+      if(myLibrary[bookIndex].read === "Read"){
+        myLibrary[bookIndex].read = "Not Read";
+        book.remove();
+        displayBook(myLibrary[bookIndex].title, myLibrary[bookIndex].author, myLibrary[bookIndex].pages, myLibrary[bookIndex].read)
+      }
+      else if(myLibrary[bookIndex].read === "Not Read"){
+        myLibrary[bookIndex].read = "Read";
+        book.remove();
+        displayBook(myLibrary[bookIndex].title, myLibrary[bookIndex].author, myLibrary[bookIndex].pages, myLibrary[bookIndex].read)
+      }
+      console.log(myLibrary);
+  }
+});
