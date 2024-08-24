@@ -65,23 +65,14 @@ confirmBtn.addEventListener("click", (event) => {
 container.addEventListener('click', function(event) {
   if (event.target.classList.contains('remove-btn')) {
       const book = event.target.closest('[data-index]');
-      book.remove();
       const bookIndex = book.dataset.index;
+      book.remove();
       delete myLibrary[bookIndex];
       console.log(myLibrary);
   }
 });
 
 container.addEventListener('click', function(event) {
-  if (event.target.classList.contains('change-status-btn')) {
-      const book = event.target.closest('[data-index]');
-      const bookIndex = book.dataset.index;
-      if(myLibrary[bookIndex].read === "Read"){
-        myLibrary[bookIndex].read = "Not Read";
-      }
-      else if(myLibrary[bookIndex].read === "Not Read"){
-        myLibrary[bookIndex].read = "Read";
-      }
-  }
-  console.log(myLibrary);
+  
 });
+
