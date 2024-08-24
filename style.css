@@ -18,7 +18,8 @@
 .book-card {
   background-color: aqua;
   height: 240px;
-  width: minmax(200px,300px);
+  min-width: 200px;
+  max-width: 300px;
   color: #000;
   margin: 10px;
   white-space: pre-wrap;
