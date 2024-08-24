@@ -68,6 +68,7 @@ container.addEventListener('click', function(event) {
       book.remove();
       const bookIndex = book.dataset.index;
       delete myLibrary[bookIndex];
+      console.log(myLibrary);
   }
 });
 
@@ -77,14 +78,10 @@ container.addEventListener('click', function(event) {
       const bookIndex = book.dataset.index;
       if(myLibrary[bookIndex].read === "Read"){
         myLibrary[bookIndex].read = "Not Read";
-        book.remove();
-        displayBook(myLibrary[bookIndex].title, myLibrary[bookIndex].author, myLibrary[bookIndex].pages, myLibrary[bookIndex].read)
       }
       else if(myLibrary[bookIndex].read === "Not Read"){
         myLibrary[bookIndex].read = "Read";
-        book.remove();
-        displayBook(myLibrary[bookIndex].title, myLibrary[bookIndex].author, myLibrary[bookIndex].pages, myLibrary[bookIndex].read)
       }
-      console.log(myLibrary);
   }
+  console.log(myLibrary);
 });
