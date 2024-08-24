@@ -6,20 +6,23 @@
   background-color: black;
 }
 
+body {
+  margin: 0;
+}
+
 .container {
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   grid-auto-rows: minmax(100px, auto);
-
 }
 
 .book-card {
-  background-color: aqua;
+  background-color: rgb(40, 124, 192);
   height: 240px;
   min-width: 200px;
-  max-width: 300px;
+  max-width: 250px;
   color: #000;
   margin: 10px;
   white-space: pre-wrap;
@@ -33,4 +36,19 @@
 button {
   display: block;
   margin: 5px;
+}
+
+label, input {
+  display: block;
+}
+
+label {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
 }
