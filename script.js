@@ -22,7 +22,15 @@ function displayBook(title, author, pages, read) {
   const bookCard = document.createElement("div");
   container.appendChild(bookCard);
   bookCard.classList.add("book-card");
-  bookCard.textContent = `Title: ${title} \n\n Author: ${author} \n\n Pages: ${pages} \n\n Status: ${read}`;
+  bookCard.textContent = `Title: ${title} \n\n Author: ${author} \n\n Pages: ${pages} \n\n Status: ${read} \n\n`;
+
+  const removeBtn = document.createElement("button");
+  bookCard.appendChild(removeBtn);
+  removeBtn.textContent = "Remove";
+
+  const changeStatusBtn = document.createElement("button");
+  bookCard.appendChild(changeStatusBtn);
+  changeStatusBtn.textContent = "Change Status";
 }
 
 addBtn.addEventListener("click", () => {

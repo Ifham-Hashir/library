@@ -28,3 +28,8 @@
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
+
+button {
+  display: block;
+  margin: 5px;
+}
