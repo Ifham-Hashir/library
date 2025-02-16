@@ -17,28 +17,28 @@
       <p>
         <label for="title">
           Title:
-          <input type="text" required id="title" name="title" value = "">
+          <input type="text" id="title" name="title" required minlength="5">
         </label>
       </p>
       <p>
         <label for="author">
           Author:
-          <input type="text" required id="author" name="author" value = "">
+          <input type="text" required id="author" name="author" minlength="10">
         </label>
       </p>
       <p>
         <label for="pages">
           Pages:
-          <input type="number" required id="pages" name="pages" value = "">
+          <input type="number" required id="pages" name="pages" min="10">
         </label>
       </p>
       <p>
         <label for="read">
           Read:
-          <input type="radio" required id="read" name="read">
+          <input type="checkbox" id="read" name="read">
         </label>
       </p>
-      <button id="confirm-button">Confirm</button>
+      <button id="confirm-button" type="submit">Confirm</button>
     </form>
   </dialog>
   <div class="container"></div>

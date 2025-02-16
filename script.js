@@ -94,6 +94,14 @@ dialog.addEventListener("close", () => {
 });
 
 confirmBtn.addEventListener("click", (event) => {
+
+  const form = document.querySelector("form");
+
+  if (!form.checkValidity()) {
+      form.reportValidity();
+      return; 
+  }
+
   event.preventDefault();
   dialog.close();
   console.log(myLibrary)
